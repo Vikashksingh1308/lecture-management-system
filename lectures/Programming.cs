@@ -28,6 +28,6 @@ public class Programming : Lecture
     // Builds a text summary that includes the programming language.
     public override string GetDetails()
     {
-        return base.GetDetails() + $", Type: Programming, Language: {Language}";
+        return $"Code: {Code}, Name: {Name}, Lecturer: {LecturerName}, Hours: {Hours}, Type: Programming, Language: {Language}";
     }
 }

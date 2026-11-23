@@ -28,6 +28,6 @@ public class Networking : Lecture
     // Builds a text summary that includes the network protocol.
     public override string GetDetails()
     {
-        return base.GetDetails() + $", Type: Networking, Protocol: {Protocol}";
+        return $"Code: {Code}, Name: {Name}, Lecturer: {LecturerName}, Hours: {Hours}, Type: Networking, Protocol: {Protocol}";
     }
 }

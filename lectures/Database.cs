@@ -6,7 +6,7 @@ namespace lecture_management_system;
  */
 public class Database : Lecture
 {
-    // Database software or system covered by the lecture.
+    // Database system covered by the lecture.
     public string DatabaseSystem { get; set; }
 
     // Creates a database lecture and passes the shared details to the base type.
@@ -28,6 +28,6 @@ public class Database : Lecture
     // Builds a text summary that includes the database system.
     public override string GetDetails()
     {
-        return base.GetDetails() + $", Type: Database, System: {DatabaseSystem}";
+        return $"Code: {Code}, Name: {Name}, Lecturer: {LecturerName}, Hours: {Hours}, Type: Database, System: {DatabaseSystem}";
     }
 }

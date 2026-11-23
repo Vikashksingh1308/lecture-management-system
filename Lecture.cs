@@ -4,7 +4,7 @@ namespace lecture_management_system;
  * This file defines the base Lecture type used by the lecture manager.
  * It stores common lecture details and provides methods for simple and detailed views.
  */
-public class Lecture
+public abstract class Lecture
 {
     public static int Count = 0;
     public string Code { get; set; }
@@ -22,18 +22,14 @@ public class Lecture
         Count++;
     }
 
-    public virtual string GetTypeName() { return "Lecture"; }
-    public virtual string GetExtraLabel() { return "Detail"; }
-    public virtual string GetExtra() { return ""; }
+    public abstract string GetTypeName();
+    public abstract string GetExtraLabel();
+    public abstract string GetExtra();
     public string GetDetailedView()
     {
         return $"Code: {Code}\nName: {Name}\nLecturer: {LecturerName}\nHours: {Hours}\n" +
                $"Type: {GetTypeName()}\n{GetExtraLabel()}: {GetExtra()}";
     }
 
-    // Builds a readable summary: marked virtual so a derived lecture type can customise it.
-    public virtual string GetDetails()
-    {
-        return $"Code: {Code}, Name: {Name}, Lecturer: {LecturerName}, Hours: {Hours}";
-    }
+    public abstract string GetDetails();
 }
