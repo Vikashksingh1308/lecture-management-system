@@ -32,28 +32,32 @@ public class Menu
                     Pause();
                     break;
                 case "2":
+                    ViewLecture();
+                    Pause();
+                    break;
+                case "3":
                     ShowHeader("All Lectures");
                     manager.ListAll();
                     Pause();
                     break;
-                case "3":
+                case "4":
                     EditLecture();
                     Pause();
                     break;
-                case "4":
+                case "5":
                     DeleteLecture();
                     Pause();
                     break;
-                case "5":
+                case "6":
                     SearchLectures();
                     Pause();
                     break;
-                case "6":
+                case "7":
                     Console.WriteLine("Goodbye!");
                     running = false;
                     break;
                 default:
-                    Console.WriteLine("Invalid choice. Please enter a number from 1 to 6.");
+                    Console.WriteLine("Invalid choice. Please enter a number from 1 to 7.");
                     Pause();
                     break;
             }
@@ -68,11 +72,12 @@ public class Menu
         Console.WriteLine($"Lectures stored: {Lecture.Count}");
         Console.WriteLine();
         Console.WriteLine("1. Add a lecture");
-        Console.WriteLine("2. List all lectures");
-        Console.WriteLine("3. Edit a lecture");
-        Console.WriteLine("4. Delete a lecture");
-        Console.WriteLine("5. Search lectures");
-        Console.WriteLine("6. Exit");
+        Console.WriteLine("2. View a lecture");
+        Console.WriteLine("3. List all lectures");
+        Console.WriteLine("4. Edit a lecture");
+        Console.WriteLine("5. Delete a lecture");
+        Console.WriteLine("6. Search lectures");
+        Console.WriteLine("7. Exit");
         Console.Write("Choose an option: ");
     }
 
@@ -110,6 +115,14 @@ public class Menu
         string term = ReadRequired("Search by code, name, lecturer or language/system/protocol: ");
         Console.WriteLine();
         manager.Search(term);
+    }
+
+    // Asks for a subject code and displays the full details of that lecture
+    private void ViewLecture()
+    {
+        ShowHeader("View Lecture");
+        string code = ReadRequired("Enter subject code: ");
+        manager.View(code);
     }
 
     // Collects lecture details and adds the chosen lecture type to the list
