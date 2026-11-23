@@ -1,0 +1,16 @@
+{
+  "ProgrammingLectures": [
+    {
+      "Language": "Java",
+      "Code": "PRG-101",
+      "Name": "Java",
+      "LecturerName": "Vikash",
+      "Hours": 12
+    }
+  ],
+  "DatabaseLectures": [],
+  "NetworkingLectures": [],
+  "NextProgrammingId": 102,
+  "NextDatabaseId": 101,
+  "NextNetworkingId": 101
+}

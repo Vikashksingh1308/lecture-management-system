@@ -96,12 +96,14 @@ public class LectureManager
         Console.WriteLine($"Total lectures: {lectures.Count}");
     }
 
-    // Searches lecture names and lecturer names without caring about letter case.
+    // Searches all lecture properties without caring about letter case.
     public void Search(string term)
     {
         bool Matches(Lecture lecture) =>
+            lecture.Code.Contains(term, StringComparison.OrdinalIgnoreCase) ||
             lecture.Name.Contains(term, StringComparison.OrdinalIgnoreCase) ||
-            lecture.LecturerName.Contains(term, StringComparison.OrdinalIgnoreCase);
+            lecture.LecturerName.Contains(term, StringComparison.OrdinalIgnoreCase) ||
+            lecture.GetExtra().Contains(term, StringComparison.OrdinalIgnoreCase);
 
         List<Lecture> matches = lectures.Where(Matches).ToList();
 

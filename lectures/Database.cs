@@ -2,7 +2,7 @@ namespace lecture_management_system;
 
 /*
  * This file defines database lectures.
- * It stores the database system alongside the common lecture details.
+ * It stores the database system and the common lecture details.
  */
 public class Database : Lecture
 {
